@@ -10,17 +10,32 @@ I generated ssh key pair in hadoop1 then copied the key to the other vm (hadoop 
 
 
 Ssh-keygen -t rsa
+
 cat.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+
 Then I configure Spark in the cluster mode.
+
 I user tar spark package on hadoop1 and scp to hadoop2
+
 On hadoop1
+
 cd /opt
+
 tar czf spark.tar.gz spark
+
 scp spark.tar.gz root@hadoop2:/opt
+
 On hadoop2
+
 cd /opt
+
 tar  xvzf  spark.tar.gz
+
 To start spark
+
 /opt/spark/sbin/start-all.sh
-To submit a spark job I used Command                                                                              -- /opt/spark/bin/spark-submit --master spark://hadoop1:7077 /opt/preprocessing.py
+
+To submit a spark job I used Command     
+
+-- /opt/spark/bin/spark-submit --master spark://hadoop1:7077 /opt/preprocessing.py
 
