@@ -39,3 +39,12 @@ To submit a spark job I used Command
 
 -- /opt/spark/bin/spark-submit --master spark://hadoop1:7077 /opt/preprocessing.py
 
+
+
+Performance of the program
+
+I observed that the duration for completing the action using only 1 Vm was approximately 2.4 minutes. When I ran the command again to check for consistency, the time remained almost the same at 2.3 minutes. This indicates that running the Python code on a single VM (using Hadoop 1 only) consistently takes about 2.4 minutes.
+
+The duration for completing a specific action using two VMs was about 27 seconds. This is approximately five times faster than the time taken when using only one VM, which was around 2.4 minutes. Running the Python code using both VMs (Hadoop 1 and Hadoop 2) demonstrates a significant improvement in processing speed.
+
+
